@@ -1,6 +1,6 @@
 # Laura
 
-# # Arquivos:
+ # Arquivos:
 
   **doc.txt:** Documentação da API desenvolvida.
   
