@@ -1,0 +1,101 @@
+Processo Seletivo Back-end 2019 - Desafio
+Autor: Thiago de Campos Schmöckel
+Data: 16/06/2019
+
+Esse documento tem como propósito descrever o funcionamento da API desenvolvida para o desafio proposto.
+
+-> URL:
+
+    Localhost: http://127.0.0.1:5000
+    Docker: 0.0.0.0:5000
+
+-> Métodos:
+
+    GET | POST | DELETE
+
+-> Requisições possíveis:
+
+    Exercícios da Etapa 1:
+
+    - URL:
+        URL/exercise_1/modalidade/dataInicial/dataFinal
+
+    - Método:
+        GET
+
+    - Parâmetros da URL:
+        modalidade=[string] (obrigatório)
+        dataInicial=[string]
+        dataInicial=[string]
+
+    - Exemplo:
+        Curl:
+            curl URL/exercise_1/PRESENCIAL/2015-07-27/2016-06-10
+
+    =======================================================
+
+    - URL:
+        URL/exercise_2/campus
+
+    - Método:
+        GET
+
+    - Parâmetros da URL
+        campus=[string] (obrigatório)
+
+    - Exemplo:
+        Curl:
+            curl URL/exercise_2/AQ
+
+    =======================================================
+
+    - URL:
+        URL/exercise_3/campus/dataInicial/dataFinal
+
+    - Método:
+        GET
+
+    - Parâmetros da URL:
+        campus=[string] (obrigatório)
+        dataInicial=[string]
+        dataInicial=[string]
+
+    - Exemplo:
+        Curl:
+            curl URL/exercise_3/AQ/2015-07-27/2016-06-10
+
+    #######################################################
+
+    Exercícios da Etapa 2:
+
+    - URL:
+        URL/exercise_4
+
+    - Método:
+        POST
+
+    - Payload
+        {"nome":"varName","idade_ate_31_12_2016":"varIdade_ate_31_12_2016","ra":"varRa","campus":"varCampus","municipio":"varMunicipio","curso":"varCurso","modalidade":"varModalidade"}     
+
+    - Exemplo:
+        Curl: 
+            curl --header "Content-Type: application/json" \
+            --request POST \
+            --data '{"nome":"Joao","idade_ate_31_12_2016":"18.0","ra":"7777","campus":"AQ","municipio":"Aquidauana","curso":"VENDEDOR","modalidade":"PRESENCIAL", "nivel_do_curso":".FIC","data_inicio":"2016-06-10"}' \
+            URL/exercise_4
+
+    =======================================================
+
+    - URL:
+        URL/exercise_5/ra/campus
+
+    - Método:
+        DELETE
+
+    - Parâmetros da URL:
+        ra=[string] (obrigatório)
+        campus=[string] (obrigatório)
+
+    - Exemplo:
+        Curl:
+            curl -X DELETE URL/exercise_5/7777/AQ
